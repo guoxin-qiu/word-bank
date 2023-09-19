@@ -5,22 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Word Bank</title>
+<link type="text/css" rel="styleSheet" href="./assets/m.css" />
 </head>
 <body>
+<div class="container">
+<div class="left">
 <h2>单词</h2>
 <article>
 	<ul>
-		<li><a href="./prefix.html">前缀</a></li>
-		<li><a href="./suffix.html">后缀</a></li>
-		<li><a href="./stem.html">词根</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('prefix')">前缀</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('suffix')">后缀</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('stem')">词根</a></li>
 	</ul>
 </article>
 <h2>短语</h2>
 <article>
 	<ul>
-		<li><a href="./phrase-work.html">工作相关短语</a></li>
-		<li><a href="./cosmetic.html">化妆品相关短语</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('phrase-work')">工作</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('phrase-cosmetic')">化妆品</a></li>
 	</ul>
 </article>
+</div>
+<div class="right">
+<svg id="mindmap"></svg>
+</div>
+</div>
+<script src="./assets/m.js"></script>
+<script>
+function clickNode(key){
+	var existScript = document.getElementById('mk');
+	var svg = document.getElementById('mindmap');
+	if(existScript){
+		existScript.remove();
+		while(svg.lastChild){
+			svg.removeChild(svg.lastChild)
+		}
+	}
+	
+	var script = document.createElement('script');
+	script.setAttribute("type","text/javascript");
+	script.setAttribute("src",'./js/'+key+'.js');
+	script.setAttribute("id","mk");
+	document.body.appendChild(script);
+}
+</script>
 </body>
 </html>
