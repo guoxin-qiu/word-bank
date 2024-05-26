@@ -13,26 +13,26 @@
 <h2>单词</h2>
 <article>
 	<ul>
-		<li><a href="javascript:void(0)" onclick="clickNode('prefix-prof')">前缀(专)</a></li>
-		<li><a href="javascript:void(0)" onclick="clickNode('suffix-prof')">后缀(专)</a></li>
-		<li><a href="javascript:void(0)" onclick="clickNode('stem-prof')">词根(专)</a></li>
-		<li><a href="javascript:void(0)" onclick="clickNode('prefix')">前缀(普)</a></li>
-		<li><a href="javascript:void(0)" onclick="clickNode('suffix')">后缀(普)</a></li>
-		<li><a href="javascript:void(0)" onclick="clickNode('stem')">词根(普)</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('prefix-prof','前缀(专)')">前缀(专)</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('suffix-prof','后缀(专)')">后缀(专)</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('stem-prof','词根(专)')">词根(专)</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('prefix','前缀(普)')">前缀(普)</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('suffix','后缀(普)')">后缀(普)</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('stem','词根(普)')">词根(普)</a></li>
 	</ul>
 </article>
 <h2>短语</h2>
 <article>
 	<ul>
-		<li><a href="javascript:void(0)" onclick="clickNode('phrase-work')">工作</a></li>
-		<li><a href="javascript:void(0)" onclick="clickNode('phrase-cosmetic')">化妆品</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('phrase-work','工作')">工作</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('phrase-cosmetic','化妆品')">化妆品</a></li>
 	</ul>
 </article>
 <h2>日常</h2>
 <article>
 	<ul>
-		<li><a href="javascript:void(0)" onclick="clickNode('food')">食物</a></li>
-		<li><a href="javascript:void(0)" onclick="clickNode('vegetables')">蔬菜</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('food','食物')">食物</a></li>
+		<li><a href="javascript:void(0)" onclick="clickNode('vegetables','蔬菜')">蔬菜</a></li>
 	</ul>
 </article>
 </div>
@@ -42,7 +42,7 @@
 </div>
 <script src="./assets/m.js"></script>
 <script>
-function clickNode(key){
+function clickNode(key, name){
 	var existScript = document.getElementById('mk');
 	var svg = document.getElementById('mindmap');
 	if(existScript){
@@ -57,6 +57,7 @@ function clickNode(key){
 	script.setAttribute("src",'./js/'+key+'.js');
 	script.setAttribute("id","mk");
 	document.body.appendChild(script);
+	document.title = 'Word Bank-' + name ?? '';
 }
 </script>
 </body>
