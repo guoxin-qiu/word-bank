@@ -57,7 +57,7 @@ function clickNode(key, name){
 	script.setAttribute("src",'./js/'+key+'.js');
 	script.setAttribute("id","mk");
 	document.body.appendChild(script);
-	document.title = 'Word Bank-' + name ?? '';
+	document.title = (name? (name + '-') : '') + 'Word Bank';
 }
 </script>
 </body>
